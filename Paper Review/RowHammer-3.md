@@ -1,6 +1,6 @@
 # RowHammer
 
-![14730591835335.jpg!small](/Users/hongxing/Downloads/14730591835335.jpg!small.jpeg)
+![14730591835335](RowHammer.assets/14730591835335.jpg)
 
 [TOC]
 
