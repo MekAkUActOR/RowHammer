@@ -102,7 +102,7 @@
     - ***the victim cells of an aggressor row*** are predominantly localized to two rows or less. In fact, only a small fraction of aggressor rows affect three rows or more: 2.53%, 0.0122%, and 0.00649%
     - ***correlation*** exists between the address of an aggressor row and those of its victim rows
       - an aggressor causes errors in rows only other than itself
-      - an aggressor and its victims are likely to have consecutive row-addresses(***logically adjacent***)
+      - x(***logically adjacent***)
         - not mean *physically adjacent*. It’s up to DRAM manufacturer
         - <font color=blue>hypothesize</font> that aggressors cause errors in their ***physically adjacent*** rows
     - Except for rare exceptions, every other victim cell had an error in ***just a single preferred direction***(***leakage***)
