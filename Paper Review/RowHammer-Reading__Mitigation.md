@@ -27,7 +27,7 @@
 
 - [ ] K. Razavi et al., “Flip Feng Shui: Hammering a Needle in the Software Stack,” in USENIX Security, 2016.
 - [ ] V. Van Der Veen et al., “Drammer: Deterministic Rowhammer Attacks on Mobile Platforms,” in CCS, 2016.
-- [ ] M. Lipp et al., “Nethammer: Inducing RowHammer Faults Through Network Requests,” arXiv, 2018.
+- [ ] M. Lipp et al., “Nethammer: Inducing RowHammer Faults Through Network Requests,” in EuroS&PW, 2018.
 
 # Mitigations
 
@@ -36,8 +36,9 @@
 - [ ] Z. B. Aweke et al., “ANVIL: Software-Based Protection Against Next-Generation Rowhammer Attacks,” in ASPLOS, 2016.
 - [ ] C. Bock et al., “RIP-RH: Preventing Rowhammer-Based Inter-Process Attacks,” in ASIA-CCS, 2019.
 - [ ] F. Brasser et al., “Can’t Touch This: Practical and Generic Software-only Defenses Against RowHammer Attacks,” USENIX Security, 2017.
-- [ ] A. Chakraborty et al., “Deep Learning Based Diagnostics for Rowhammer Protection of DRAM Chips,” in ATS, 2019.
+- [ ] A. Chakraborty et al., "Deep Learning Based Diagnostics for Rowhammer Protection of DRAM Chips," in ATS, 2019.
 - [ ] R. K. Konoth et al., “ZebRAM: Comprehensive and Compatible Software Protection Against Rowhammer Attacks,” in OSDI, 2018.
+- [ ] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
 
 ### DRAM-Level
 
