@@ -12,27 +12,37 @@
 ## Summary
 This paper experimentally characterizes and understands the latency variation across cells within a DRAM chip for three fundamental DRAM operations(`activation`, `precharge`, `restoration`), and develops new mechanisms that exploit the latency variation to reliably improve performance.
 
-The experiments are carried across a total of 30 __DDR3__ DRAM modules comprising 240 DRAM chips from the three major DRAM vendors, on an FPGA-based DRAM testing in- frastructure. Here are 
+The experiments are carried across a total of 30 __DDR3__ DRAM modules comprising 240 DRAM chips from the three major DRAM vendors, on an FPGA-based DRAM testing in- frastructure. Here are some important conclusions.
+
+- Significant variation is present in modern DRAM chips for the latencies of all three fundamental DRAM operations.
+- There is spatial locality in inherently slower cells: such cells are clustered in certain regions of a DRAM chip.
+- Each latency exhibits a different level of impact on the inherently-slower cells.
+- Most of the erroneous cache lines have a single-bit error, with only a small fraction of cache lines experiencing more than one bit flip.
+- No clear correlation is between temperature and variation in cell access latency.
+- The stored data pattern in cells affects access latency variation
+
+Therefore, the paper proposes _FLY-DRAM_ to exploit these findings to improve performance: (i) categorize the DRAM cells into fast and slow regions, (ii) expose this information to the memory controller, (iii) access the fast regions with a lower latency. The simulation-based analysis on the mechanism shows a good result. An idea of a DRAM-aware page allocator that places more frequently-accessed pages into lower-latency regions in DRAM is also discusses.
+
+It is promising to understand and exploit the inherent latency variation within modern DRAM chips, which will improve system performance and perhaps reliability.
 
 ## Strengths
 
-- Carry out detailed variable-controlling experiments on a broad range of real modern DRAM chips across different DRAM types, especially the new ones, providing evidence that modern DRAM chips are becoming more and more vulnerable to RowHammer.
-- Detailed explain experimental platform, infrastucture, condition and parameters, making it easier for researchers to reproduce experiments.
-- Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental conditions and parameters(e.g., worst-case condition), and then continue experiments only in these selective conditions, avoiding invalid experiments and making the experiment more efficient.
-- Carry out simulation to not only evaluate the performance of existing mitigation mechanisms now but also study how the mitigation mechanisms scale with chip vulnerability in the future.
-- Provide two promising directions for future RowHammer mitigation research, which is the most valuable part of this paper.
+- Concise and easy to understand experimental pseudocode.
+- Push process forward by questions, making the main line clearer.
+- Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental parameter range, and then continue experiments only in this range, avoiding invalid experiments and making the experiment more efficient.
+- Show the chart selectively, making the conclusion more obvious and the paper more concise.
 
 ## Weaknesses
 
-- **Logical Error**. The paper uses RowHammer’s key observation in their 2014 work that repeatedly accessing an arbitrary row causes the two directly **physically-adjacent** rows to contain the highest number of RowHammer bit flips to reverse-engineer the confidential logical-to-physical DRAM-internal row address remapping, which all subsequent experiments are based on. It’s fine but in ***RowHammer Spatial Effects*** section they use experiments based on this to demonstrate RowHammer spatial effects. This means, they use experiments based on *==RowHammer spatial effects==* to demonstrate *==RowHammer spatial effects==*. Ultimately it is a ***circular argument***. And after all in their 2014 work it’s not an observation. The true observation in their 2014 work is *accessing an arbitrary row causes the two directly **logically-adjacent** rows to contain the highest number of RowHammer bit flips*, not **physically-adjacent**. And the physically-adjacent one is only a ***hypothesis*** in their 2014 work(but might have been widely accepted by the academic community).
-- Few new ideas, only repeated the experiments they had done in 2014 on new DRAM chips and got the similar conclusions, no new observation.
-- Inefficient experimental methodology. Carried out complex and costly experiments, but only drew superficial conclusions, and most of them are *modern DRAM chips are more vulnerable to RowHammer*. Didn't further explore the physical nature from the experimental observations or try to propose a physical model to precisely describe RowHammer bit flips phenomenon.
-- A lot of repeated sentences.
+- Only carried out experiments on old DDR3 chips.
+- Unrealistic mechanism.
+  - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments.
+  - No latency margin, unrealistic. After all, most of “waste latency” in contemporary DRAM are because of margin.
+  - Looking up and applying latency for every request also induces latencies.
+- Flawed simulation, evading the crucial point. Didn’t discuss the overhead for looking up and applying latency for every request.
 
 ## Thoughts
-- After all the RowHammer bit flip is a physical phenomenon, so it’s possible to come up with a physical model to describe it precisely. We can describe the interference of RowHammer to each DRAM cell using mathematical and physical model. Then we can simulate the interference of RowHammer to DRAM cells according to the mathematical and physical model using microelectronic technology. For mitigation usage We may just directly exert the simulating interference on all DRAM cells simultaneously instead of activating aggressor rows one by one. And in this way we easily find RowHammerable areas and protect them in a targeted way with much lower overhead, since RowHammer bit flips are repeatable. This is also what ***Profile-Guided Mechanisms*** in the paper means.
-- ***DRAM-System Cooperation*** and ***Profile-Guided Mechanisms*** are not independent of each other. We can combine these two directions and create more scalable and low-overhead mitigations. For example, we can scan the RowHammerable areas after manufacturing and record their information(address, risk) on extra ROM, and when the DRAM is used in a system the OS checks the ROM and then make special mitigation measures(like only storing less important data in these areas) in these areas. Or we can scan DRAM dynamically(when switching on / off the OS)(considering the RowHammerable areas may change with time, which might haven’t been discussed by previous researches) and do the same system mitigation mechanisms.
-- Discuss the correlation between RowHammerable areas and DRAM using time to complement the characterization of RowHammer.
+- 
 
 ## Takeaways and questions
 
