@@ -36,22 +36,25 @@ It is promising to understand and exploit the inherent latency variation within 
 
 - Only carried out experiments on old DDR3 chips.
 - Unrealistic mechanism.
-  - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments.
+  - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments. And latency variations in different chips are distinctive, so one should do the investigation on every chip. And the latency variation in one chip may change with time, make it more difficult.
   - No latency margin, unrealistic. After all, most of “waste latency” in contemporary DRAM are because of margin.
   - Looking up and applying latency for every request also induces latencies.
 - Flawed simulation, evading the crucial point. Didn’t discuss the overhead for looking up and applying latency for every request.
+- Tiger head, snake tail. It's very detailed at the beginning, but too brief from the middle to ending.
 
 ## Thoughts
-- 
+- There may be correlation between latency and DRAM generation. So we can carry out similar experiments on across different generations to characterize the correlation.
+- The latency variation in one chip may change with time, so experiments should also be carried out to characterize it.
 
 ## Takeaways and questions
 
-This paper is a good example in doing an effective and comprehensive experiment. First, clarify motivation and goal of the experiment. Second, decide the experimental methodology according to your goal. Third, establish a universal and effective experimental platform. Fourth, determine experimental parameters. Fifth, do preliminery experiments to narrow the scope of experimental conditions. Sixth, carry out main experiments, and modify the experimental condition dynamically according to observations in progress. Seventh, collect observations, explain them and make conclusions. Finally, explore more about your observations(if the experiments cost much you’d better do that to make it more valuable) and discuss some interesting/unexpected observations in experiments.
+It’s not a new idea to characterize and exploit latency variation in DRAM, and the proposed mechanism is also not outstanding. The advantage of this paper is it has the resources and time to carry out the experiments.
 
-The paper also disappoints me for it carried out comprehensive and costly experiments that few lab can do, but only drew some simple and superficial conclusions. It's like a richman spending a lot of money on worthless things.
+The most important knowledge I learn is the DRAM accessing mechanism: (i) Row Activation & Sense Amplification: opening a row to transfer its data to the row buffer, (ii) Read/Write: accessing the target column in the row buffer, and (iii) Precharge: closing the row and the row buffer.
+
+<img src="RowHammer.assets/1.png" alt="1" style="zoom:33%;" />
 
 Here I have some questions.
 
-- Is it realistic to try to propose a physical model to describe the interference of RowHammer to each DRAM cell precisely? There are lots of work on RowHammer but few of them involve this aspect, why?
-- How about the scalability of system-level mitigation mechanisms with the increasing RowHammer vulnerability? If it’s more scalable(I think so intuitively) it’s also a good idea to develop mitigations in this direction.
-
+- Why use WS(weighted speedup) to evaluate the performance in simulation? Is this the convention of computer architecture research?
+- Do newer DRAM chips have longer latency?
