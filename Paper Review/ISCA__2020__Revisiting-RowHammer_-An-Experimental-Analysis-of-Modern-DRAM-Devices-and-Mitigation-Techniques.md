@@ -25,10 +25,8 @@ RowHammer bit flips cast tremendous thread on security of hardwares and software
 
 ## Strengths
 
-- Carry out detailed variable-controlling experiments on a broad range of real modern DRAM chips across different DRAM types, especially the new ones, providing evidence that modern DRAM chips are becoming more and more vulnerable to RowHammer.
 - Detailed explain experimental platform, infrastucture, condition and parameters, making it easier for researchers to reproduce experiments.
 - Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental conditions and parameters(e.g., worst-case condition), and then continue experiments only in these selective conditions, avoiding invalid experiments and making the experiment more efficient.
-- Carry out simulation to not only evaluate the performance of existing mitigation mechanisms now but also study how the mitigation mechanisms scale with chip vulnerability in the future.
 - Provide two promising directions for future RowHammer mitigation research, which is the most valuable part of this paper.
 
 ## Weaknesses
