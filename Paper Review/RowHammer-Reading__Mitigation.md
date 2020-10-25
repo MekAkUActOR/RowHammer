@@ -1,9 +1,8 @@
 # DRAM
 
 - [ ] S. Hong, “Memory Technology Trend and Future Challenges,” in IEDM, 2010.
-- [ ] K. K. Chang, “Understanding and Improving Latency of DRAM-Based Memory Systems,” Ph.D. dissertation, Carnegie Mellon University, 2017.
 - [x] K. K. Chang et al., “Understanding Latency Variation in Modern DRAM Chips: Experimental Characterization, Analysis, and Optimization,” in SIGMETRICS, 2016.
-- [ ] J. Liu et al., “An Experimental Study of Data Retention Behavior in Modern DRAM Devices: Implications for Retention Time Profiling Mechanisms,” in ISCA, 2013.
+- [x] J. Liu et al., “An Experimental Study of Data Retention Behavior in Modern DRAM Devices: Implications for Retention Time Profiling Mechanisms,” in ISCA, 2013.
 
 # Cause of RowHammer
 
