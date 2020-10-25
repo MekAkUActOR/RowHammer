@@ -5,23 +5,14 @@
 - Title: Understanding Latency Variation in Modern DRAM Chips: Experimental Characterization, Analysis, and Optimization
 - Authors: Kevin K. Chang, Abhijith Kashyap, Hasan Hassan, Saugata Ghose, Kevin Hsieh, Donghyuk Lee, Tianshi Li, Gennady Pekhimenko, Samira Khan, Onur Mutlu
 - Venue: SIGMETRICS 2016
-- Keywords: DRAM, latency, optimization
+- Keywords: DRAM, latency variation, performance optimization
 
 # Paper content
 
 ## Summary
-This paper experimentally demonstrates how vulnerable modern DRAM chips are to RowHammer at the circuit-level, studies how this vulnerability will **scale going forward**, and evaluates five state-of-the-art RowHammer **mitigation mechanisms** using cycle-accurate simulation. Finally it provides promising directions for future research on RowHammer mitigation.
+This paper experimentally characterizes and understands the latency variation across cells within a DRAM chip for three fundamental DRAM operations(`activation`, `precharge`, `restoration`), and develops new mechanisms that exploit the latency variation to reliably improve performance.
 
-To characterize RowHammer many detailed variable-controlling experiments were carried out on a broad range of real modern DRAM chips across different DRAM types, technology node generations, and manufacturers. Here are some important academic conclusions.
-
-- Newer DRAM chips appear to be more vulnerable to RowHammer, and the first RowHammer bit flips appear earlier.
-- The log of the number of RowHammer bit flips has a linear relationship with the log of HC(Hammer count).
-- Chips of newer DRAM technology nodes can exhibit RowHammer bit flips 1) in more rows and 2) farther away from the victim row. The number of RowHammer bit flips that occur in a given row decreases as the distance from the victim row increases. A single word can contain several bit flips.
-- The ECC plays a role in mitigating RowHammer bit flips.
-
-The paper uses cycle-accurate simulation to evaluate the five state-of-the-art RowHammer mitigation mechanisms — **Increased Refresh Rate**, **PARA**, **ProHIT**, **MRLoc**, **TWiCe** — and the **ideal refresh-based** mitigation mechanism, and draws the conclusion that these mechanisms are not scalable in the face of worsening RowHammer vulnerability and even the **ideal refresh-based** mitigation mechanism affects system performance at very low $HC_{first}$ values(means very vulnerable to RowHammer).
-
-RowHammer bit flips cast tremendous thread on security of hardwares and softwares, and modern DRAM chips that use smaller process technology node sizes are significantly more vulnerable to RowHammer. However, existing RowHammer mitigation mechanisms suffer from prohibitively large performance overheads at projected future hammer counts(not scalable) and are still far from an ideal selective-refresh-based RowHammer mitigation mechanism. A scalable and low-overhead solution to RowHammer is needed. The paper provides two promising directions — ***DRAM-System Cooperation*** and ***Profile-Guided Mechanisms*** — for future RowHammer mitigation research.
+The experiments are carried across a total of 30 __DDR3__ DRAM modules comprising 240 DRAM chips from the three major DRAM vendors, on an FPGA-based DRAM testing in- frastructure. Here are 
 
 ## Strengths
 
