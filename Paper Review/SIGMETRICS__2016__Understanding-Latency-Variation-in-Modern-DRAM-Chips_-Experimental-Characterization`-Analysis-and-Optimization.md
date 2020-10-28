@@ -10,15 +10,13 @@
 # Paper content
 
 ## Summary
-This paper experimentally characterizes and understands the latency variation across cells within a DRAM chip for three fundamental DRAM operations(`activation`, `precharge`, `restoration`), and develops new mechanisms that exploit the latency variation to reliably improve performance.
+This paper experimentally characterizes and understands the latency variation across cells within a DRAM chip for three fundamental DRAM operations (`activation`, `precharge`, `restoration`), and develops new mechanisms that exploit the latency variation to reliably improve performance.
 
 The experiments are carried across a total of 30 __DDR3__ DRAM modules comprising 240 DRAM chips from the three major DRAM vendors, on an FPGA-based DRAM testing in- frastructure. Here are some important conclusions.
 
-- Significant variation is present in modern DRAM chips for the latencies of all three fundamental DRAM operations.
 - There is spatial locality in inherently slower cells: such cells are clustered in certain regions of a DRAM chip.
 - Each latency exhibits a different level of impact on the inherently-slower cells.
 - Most of the erroneous cache lines have a single-bit error, with only a small fraction of cache lines experiencing more than one bit flip.
-- No clear correlation is between temperature and variation in cell access latency.
 - The stored data pattern in cells affects access latency variation
 
 Therefore, the paper proposes _FLY-DRAM_ to exploit these findings to improve performance: (i) categorize the DRAM cells into fast and slow regions, (ii) expose this information to the memory controller, (iii) access the fast regions with a lower latency. The simulation-based analysis on the mechanism shows a good result. An idea of a DRAM-aware page allocator that places more frequently-accessed pages into lower-latency regions in DRAM is also discusses.
@@ -37,13 +35,13 @@ It is promising to understand and exploit the inherent latency variation within 
 - Only carried out experiments on old DDR3 chips.
 - Unrealistic mechanism.
   - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments. And latency variations in different chips are distinctive, so one should do the investigation on every chip. And the latency variation in one chip may change with time, make it more difficult.
-  - No latency margin, unrealistic. After all, most of “waste latency” in contemporary DRAM are because of margin.
+  - No latency margin, unreliable. After all, most of “waste latency” in contemporary DRAM are because of margin.
   - Looking up and applying latency for every request also induces latencies.
-- Flawed simulation, evading the crucial point. Didn’t discuss the overhead for looking up and applying latency for every request.
+- Flawed simulation, evading the crucial point. Didn’t discuss the overhead of looking up and applying latency for every request.
 - Tiger head, snake tail. It's very detailed at the beginning, but too brief from the middle to ending.
 
 ## Thoughts
-- There may be correlation between latency and DRAM generation. So we can carry out similar experiments on across different generations to characterize the correlation.
+- There may be correlation between latency variation and DRAM generation. So we can carry out similar experiments on across different generations to characterize the correlation.
 - The latency variation in one chip may change with time, so experiments should also be carried out to characterize it.
 
 ## Takeaways and questions
@@ -56,5 +54,5 @@ The most important knowledge I learn is the DRAM accessing mechanism: (i) Row Ac
 
 Here I have some questions.
 
-- Why use WS(weighted speedup) to evaluate the performance in simulation? Is this the convention of computer architecture research?
-- Do newer DRAM chips have longer latency?
+- Why use WS (weighted speedup) to evaluate the performance in simulation? Is this the convention of computer architecture research?
+- Does newer DRAM chip have longer latency?
