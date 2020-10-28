@@ -5,7 +5,7 @@
 - Title: Understanding Latency Variation in Modern DRAM Chips: Experimental Characterization, Analysis, and Optimization
 - Authors: Kevin K. Chang, Abhijith Kashyap, Hasan Hassan, Saugata Ghose, Kevin Hsieh, Donghyuk Lee, Tianshi Li, Gennady Pekhimenko, Samira Khan, Onur Mutlu
 - Venue: SIGMETRICS 2016
-- Keywords: DRAM, latency variation, performance optimization
+- Keywords: DRAM performance, latency variation, memory performance optimization
 
 # Paper content
 

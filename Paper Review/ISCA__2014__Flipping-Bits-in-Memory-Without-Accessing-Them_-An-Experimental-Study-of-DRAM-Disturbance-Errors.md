@@ -5,7 +5,7 @@
 - Title: Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors
 - Authors: Yoongu Kim, Ross Daly, Jeremie Kim, Chris Fallin, Ji Hye Lee, Donghyuk Lee, Chris Wilkerson, Konrad Lai, Onur Mutlu
 - Venue: ISCA 2014
-- Keyword: DRAM vulnerability, characterization, mitigation
+- Keyword: DRAM vulnerability, RowHammer characterization, RowHammer mitigation
 
 # Paper content
 

@@ -5,7 +5,7 @@
 - Title: Revisiting RowHammer: An Experimental Analysis of Modern DRAM Devices and Mitigation Techniques
 - Authors: Jeremie S. Kim, Minesh Patel, A. Giray Yağlıkçı, Hasan Hassan, Roknoddin Azizi, Lois Orosa, Onur Mutlu
 - Venue: ISCA 2020
-- Keywords: RowHammer, characterization, mitigation
+- Keywords: DRAM vulnerability, RowHammer characterization, RowHammer mitigation evaluation
 
 # Paper content
 
