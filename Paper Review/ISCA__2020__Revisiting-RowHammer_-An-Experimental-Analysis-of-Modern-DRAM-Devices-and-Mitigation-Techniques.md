@@ -21,7 +21,7 @@ To characterize RowHammer many detailed variable-controlling experiments were ca
 
 The paper uses cycle-accurate simulation to evaluate the five state-of-the-art RowHammer mitigation mechanisms — **Increased Refresh Rate**, **PARA**, **ProHIT**, **MRLoc**, **TWiCe** — and the **ideal refresh-based** mitigation mechanism, and draws the conclusion that these mechanisms are not scalable in the face of worsening RowHammer vulnerability and even the **ideal refresh-based** mitigation mechanism affects system performance at very low $HC_{first}$ values (means very vulnerable to RowHammer).
 
-RowHammer bit flips cast tremendous thread on security of hardwares and softwares, and modern DRAM chips that use smaller process technology node sizes are significantly more vulnerable to RowHammer. However, existing RowHammer mitigation mechanisms suffer from prohibitively large performance overheads at projected future hammer counts (not scalable) and are still far from an ideal selective-refresh-based RowHammer mitigation mechanism. A scalable and low-overhead solution to RowHammer is needed. The paper provides two promising directions — ***DRAM-System Cooperation*** and ***Profile-Guided Mechanisms*** — for future RowHammer mitigation research.
+Modern DRAM chips are more vulnerable to RowHammer. However, existing RowHammer mitigation mechanisms suffer from large performance overheads at projected future hammer counts (not scalable) and are still far from ideal. A scalable and low-overhead solution to RowHammer is needed. The paper provides two promising directions — ***DRAM-System Cooperation*** and ***Profile-Guided Mechanisms*** — for future RowHammer mitigation research.
 
 ## Strengths
 
@@ -32,7 +32,7 @@ RowHammer bit flips cast tremendous thread on security of hardwares and software
 ## Weaknesses
 
 - **Logical Error**. The paper uses RowHammer’s key observation in their 2014 work that repeatedly accessing an arbitrary row causes the two directly **physically-adjacent** rows to contain the highest number of RowHammer bit flips, to reverse-engineer the confidential logical-to-physical DRAM-internal row address remapping, which all subsequent experiments are based on. It’s fine but in ***RowHammer Spatial Effects*** section they use experiments based on this to demonstrate RowHammer spatial effects. This means, they use experiments based on *==RowHammer spatial effects==* to demonstrate *==RowHammer spatial effects==*. Ultimately it is a ***circular argument***. And after all in their 2014 work it’s not an observation. The true observation is *accessing an arbitrary row causes the two directly **logically-adjacent** rows to contain the highest number of RowHammer bit flips*, not **physically-adjacent**. And the physically-adjacent one is only a ***hypothesis*** in their 2014 work (but might have been widely accepted by the academic community).
-- Few new ideas, only repeated the experiments they had done in 2014 on new DRAM chips and got the similar conclusions, no new observation.
+- Few new ideas. Only repeated the experiments they had done in 2014 on new DRAM chips and got the similar conclusions, no new observation.
 - Inefficient experimental methodology. Carried out complex and costly experiments, but only drew superficial conclusions, and most of them are *modern DRAM chips are more vulnerable to RowHammer*. Didn't further explore the physical nature from the experimental observations or try to propose a physical model to precisely describe RowHammer bit flips phenomenon.
 - A lot of repeated sentences.
 
