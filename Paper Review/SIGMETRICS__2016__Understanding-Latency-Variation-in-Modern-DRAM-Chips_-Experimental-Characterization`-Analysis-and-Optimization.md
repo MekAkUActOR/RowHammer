@@ -34,7 +34,7 @@ It is promising to understand and exploit the inherent latency variation within 
 
 - Only carried out experiments on old DDR3 chips.
 - Unrealistic mechanism.
-  - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments. And latency variations in different chips are distinctive, so one should do the investigation on every chip. And the latency variation in one chip may change with time, make it more difficult.
+  - It must take a huge amount of time to investigate the latency variation in a DRAM chip, for it takes 1300 hours in similar experiments. And latency variations in different chips are distinctive, so one should do the investigation on every chip. And the latency variation in one chip may change with time, making it more difficult.
   - No latency margin, unreliable. After all, most of “waste latency” in contemporary DRAM are because of margin.
   - Looking up and applying latency for every request also induces latencies.
 - Flawed simulation, evading the crucial point. Didn’t discuss the overhead of looking up and applying latency for every request.
