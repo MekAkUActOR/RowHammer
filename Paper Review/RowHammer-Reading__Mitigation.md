@@ -17,7 +17,7 @@
 
 ### Vulnerability
 
-- [ ] L. Cojocar et al., “Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against RowHammer Attacks,” in SP, 2019.
+- [x] L. Cojocar et al., “Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against RowHammer Attacks,” in SP, 2019.
 - [ ] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
 - [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
 - [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
@@ -62,6 +62,6 @@ None
 # Experiment and Simulation Methodology
 
 - [ ] H. Hassan et al., “SoftMC: A Flexible and Practical Open-Source Infrastructure for Enabling Experimental DRAM Studies,” in HPCA, 2017.
-- [ ] SAFARI Research Group, “SoftMC Source Code,” https://github.com/CMU-SAFARI/SoftMC.
+  - [ ] SAFARI Research Group, “SoftMC Source Code,” https://github.com/CMU-SAFARI/SoftMC.
 - [ ] Y. Kim et al., “Ramulator: A Fast and Extensible DRAM Simulator,” in CAL, 2016.
-- [ ] SAFARI Research Group, “Ramulator Source Code,” https://github.com/CMU-SAFARI/ramulator.
+  - [ ] SAFARI Research Group, “Ramulator Source Code,” https://github.com/CMU-SAFARI/ramulator.
