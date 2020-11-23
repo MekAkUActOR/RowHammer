@@ -2,8 +2,8 @@
 
 # Paper information
 
-- Title: Experiments and Root Cause Analysis for Active-Precharge Hammering Fault in DDR3 SDRAM under 3× nm Technology
-- Authors: Kyungbae Park, Chulseung Lim, Donghyuk Yun, Sanghyeon Baeg
+- Title: Statistical Distributions of Row-Hammering Induced Failures in DDR3 Components
+- Authors: Kyungbae Park, Donghyuk Yun, Sanghyeon Baeg
 - Venue: MR 2016
 - Keywords: RowHammer Effect, TCAD simulations, charge capture and emission, carrier mitigation
 
