@@ -31,7 +31,7 @@ Conclusions are as follows:
 
 - RowHammer characterizations at the macro and micro levels were split. There is no straight relationship between macro characterization and micro characterization.
 - Only characterized row hammer effect on two data patterns, which is not comprehensive enough. And did not explain the mechanism of row hammer happening in the case of data pattern $P_{1/1}$ clearly.
-- $t_{dead}$  in  Section 4.2 is not necessary. The varialble supposed to be controled is the number of hammering, not experimental time.
+- $t_{dead}$  in  Section 4.2 is not necessary. The variable supposed to be controlled is the number of hammering, not experimental time.
 - Only experiments, no new ideas.
 
 ## Thoughts
