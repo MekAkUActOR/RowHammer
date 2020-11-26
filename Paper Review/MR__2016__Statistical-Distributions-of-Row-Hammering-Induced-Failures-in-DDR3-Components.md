@@ -1,10 +1,10 @@
-# Haowen Liu  2020-11-24
+# Haowen Liu  2020-11-26
 
 # Paper information
 
-- Title: Statistical Distributions of Row-Hammering Induced Failures in DDR3 Components
-- Authors: Kyungbae Park, Donghyuk Yun, Sanghyeon Baeg
-- Venue: MR 2016
+- Title: Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against Rowhammer Attacks
+- Authors: Lucian Cojocar, Kaveh Razavi, Cristiano Giuffrida, Herbert Bos
+- Venue: S&P 2019
 - Keywords: 
 
 # Paper content
