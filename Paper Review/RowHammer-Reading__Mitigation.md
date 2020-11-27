@@ -10,7 +10,7 @@
 
 # RowHammer Characterization
 
-- [x] K. Park et al., “Experiments and Root Cause Analysis for Active-Precharge Hammering Fault in DDR3 SDRAM under 3× nm Technology,” MR, 2016.
+- [x] K. Park et al., “Experiments and Root Cause Analysis for Active-Precharge Hammering Fault in DDR3 SDRAM under 3×nm Technology,” MR, 2016.
 - [x] K. Park et al., “Statistical Distributions of Row-Hammering Induced Failures in DDR3 Components,” MR, 2016.
 
 # Vulnerability and Attacks
