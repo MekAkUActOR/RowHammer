@@ -18,7 +18,7 @@
 ### Vulnerability
 
 - [x] L. Cojocar et al., “Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against RowHammer Attacks,” in SP, 2019.
-- [ ] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
+- [x] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
 - [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
 - [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
 
