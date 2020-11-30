@@ -21,10 +21,11 @@
 - [x] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
 - [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
 - [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
+- [ ] A. Tatar *et al.*, “Defeating Software Mitigations against Rowhammer: A Surgical Precision Hammer,” in *RAID*, 2018.
 
 ### Attacks
 
-- [ ] K. Razavi et al., “Flip Feng Shui: Hammering a Needle in the Software Stack,” in USENIX Security, 2016.
+- [x] K. Razavi et al., “Flip Feng Shui: Hammering a Needle in the Software Stack,” in USENIX Security, 2016.
 - [ ] V. Van Der Veen et al., “Drammer: Deterministic Rowhammer Attacks on Mobile Platforms,” in CCS, 2016.
 - [ ] M. Lipp et al., “Nethammer: Inducing RowHammer Faults Through Network Requests,” in EuroS&PW, 2018.
 
@@ -37,7 +38,7 @@
 - [ ] F. Brasser et al., “Can’t Touch This: Practical and Generic Software-only Defenses Against RowHammer Attacks,” USENIX Security, 2017.
 - [ ] A. Chakraborty et al., "Deep Learning Based Diagnostics for Rowhammer Protection of DRAM Chips," in ATS, 2019.
 - [ ] R. K. Konoth et al., “ZebRAM: Comprehensive and Compatible Software Protection Against Rowhammer Attacks,” in OSDI, 2018.
-- [ ] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
+- [x] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
 
 ### DRAM-Level
 
@@ -49,7 +50,6 @@
 - [ ] H. Gomez et al., “DRAM Row-Hammer Attack Reduction using Dummy Cells,” in NORCAS, 2016.
 - [ ] H. Hassan et al., “CROW: A Low-Cost Substrate for Improving DRAM Performance, Energy Efficiency, and Reliability,” in ISCA, 2019.
 - [ ] M. Kim et al., “An Effective DRAM Address Remapping for Mitigating Rowhammer Errors,” TC, 2019.
-- [ ] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
 
 ### DRAM-System Cooperation
 

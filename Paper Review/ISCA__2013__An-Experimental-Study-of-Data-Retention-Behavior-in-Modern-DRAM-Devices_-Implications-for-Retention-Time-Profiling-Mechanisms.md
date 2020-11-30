@@ -22,16 +22,19 @@ The paper explains DPD as the result of complex line coupling determined by mapp
 
 The paper advocates that DPD and VRT should be addressed in future retention time profiling research.
 
-
 ## Strengths
 
 - This paper conducted experiments on a wide range of commodity DRAM chips across different manufacturers and generations.
 - Designed robust experimental methodology like decoupling the effect of DPD and VRT by runing all tests at a given $t_{WAIT}$ together. And conducted preliminary experiments to demonstrate the correctness of their apparatus and methodology by comparing with previous researches’ results.
 - Pointed out the flaws in previous reseaches on DPD that only all 0s/1s is insufficient, and introduced three more DPDs to ensure the effectiveness of characterization.
-- Figures are apparent and easy-to-understand.
 
 ## Weaknesses
 
+- Though the paper explained different DPD in different DRAM chips as the result of circuit architecture variation, they did not explore the correlation between DPD and circuit architecture, which is necessary for retention time profiling.
+
+## Paper presentation
+
+- Figures are apparent and easy-to-understand.
 - Some figures are useless. For example, Figure 7(a) is unnecessary for it can be described in one sentence, and Figure 8(a) is also unnecessary for there is a Logarithmic y-axis figure. And all figures are too big, no distinction between primary and secondary. These figures take up the space in vain, leading to less compact writing and inefficient characterization of VRT.
 - Article architecture is not appropriate. Talk too much about experiment design and experiment correctness demonstration, but the exploration depth of DPD and VRT is not that enough, which are exactly the key part of the paper.
 
@@ -41,4 +44,4 @@ The paper advocates that DPD and VRT should be addressed in future retention tim
 ## Takeaways and questions
 
 - I guess runing all tests at a given $t_{WAIT}$ together cannot completely decouple the effects of DPD and VRT, but can decrease the effects to minimum.
-- In Section 5.1, why the decrease of lowest-coverage data pattern’s coverage can indicates that the impact of DPD increases with technology scaling.
+- In Section 5.1, why the decrease of lowest-coverage data pattern’s coverage can indicates that the impact of DPD increases with technology scaling?
