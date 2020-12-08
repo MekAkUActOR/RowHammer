@@ -46,7 +46,7 @@
 - [ ] D.-H. Kim et al., “Architectural Support for Mitigating Row Hammering in DRAM Memories,” IEEE CAL, 2014.
 - [ ] M. Son et al., “Making DRAM Stronger Against Row Hammering,” in DAC, 2017.
 - [ ] J. M. You et al., “MRLoc: Mitigating Row-Hammering Based on Memory Locality,” in DAC, 2019.
-- [ ] E. Lee et al., “TWiCe: Preventing Row-Hammering by Exploiting Time Window Counters,” in ISCA, 2019.
+- [x] E. Lee et al., “TWiCe: Preventing Row-Hammering by Exploiting Time Window Counters,” in ISCA, 2019.
 - [ ] H. Gomez et al., “DRAM Row-Hammer Attack Reduction using Dummy Cells,” in NORCAS, 2016.
 - [ ] H. Hassan et al., “CROW: A Low-Cost Substrate for Improving DRAM Performance, Energy Efficiency, and Reliability,” in ISCA, 2019.
 - [ ] M. Kim et al., “An Effective DRAM Address Remapping for Mitigating Rowhammer Errors,” TC, 2019.
