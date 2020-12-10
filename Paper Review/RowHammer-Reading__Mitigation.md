@@ -21,12 +21,12 @@
 - [x] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
 - [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
 - [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
-- [ ] A. Tatar *et al.*, “Defeating Software Mitigations against Rowhammer: A Surgical Precision Hammer,” in *RAID*, 2018.
+- [x] A. Tatar *et al.*, “Defeating Software Mitigations against Rowhammer: A Surgical Precision Hammer,” in *RAID*, 2018.
 
 ### Attacks
 
 - [x] K. Razavi et al., “Flip Feng Shui: Hammering a Needle in the Software Stack,” in USENIX Security, 2016.
-- [x] V. Van Der Veen et al., “Drammer: Deterministic Rowhammer Attacks on Mobile Platforms,” in CCS, 2016.
+- [ ] V. Van Der Veen et al., “Drammer: Deterministic Rowhammer Attacks on Mobile Platforms,” in CCS, 2016.
 - [ ] M. Lipp et al., “Nethammer: Inducing RowHammer Faults Through Network Requests,” in EuroS&PW, 2018.
 
 # Mitigations
