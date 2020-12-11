@@ -22,6 +22,7 @@
 - [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
 - [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
 - [x] A. Tatar *et al.*, “Defeating Software Mitigations against Rowhammer: A Surgical Precision Hammer,” in *RAID*, 2018.
+- [x] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
 
 ### Attacks
 
@@ -37,8 +38,7 @@
 - [ ] C. Bock et al., “RIP-RH: Preventing Rowhammer-Based Inter-Process Attacks,” in ASIA-CCS, 2019.
 - [ ] F. Brasser et al., “Can’t Touch This: Practical and Generic Software-only Defenses Against RowHammer Attacks,” USENIX Security, 2017.
 - [ ] A. Chakraborty et al., "Deep Learning Based Diagnostics for Rowhammer Protection of DRAM Chips," in ATS, 2019.
-- [ ] R. K. Konoth et al., “ZebRAM: Comprehensive and Compatible Software Protection Against Rowhammer Attacks,” in OSDI, 2018.
-- [x] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
+- [x] R. K. Konoth et al., “ZebRAM: Comprehensive and Compatible Software Protection Against Rowhammer Attacks,” in OSDI, 2018.
 
 ### DRAM-Level
 
