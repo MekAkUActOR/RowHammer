@@ -46,6 +46,7 @@ Finally they use the worst-case instruction sequences and row adjacency to test 
 ## Takeaways and questions
 
 - How did they use single-sided RowHammer to reverse engineer row adjacency? Generally, one should access to two different rows in a bank in a loop to cause a hammer, or the row buffer will back the value rather than access to the row. But accessing two different rows in a bank leads to an attribution challenge – is the flipped bit adjacent to aggressor #1 or aggressor #2?
+- Why did they say the **microarchitectural side-effects** happens *only when* the cache line is invalid? Why not if a cache line is in another state?
 
 
 
