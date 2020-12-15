@@ -1,4 +1,4 @@
-# Haowen Liu  2020-11-25
+# Haowen Liu (2020-11-25)
 
 # Paper information
 
@@ -33,6 +33,10 @@ Conclusions are as follows:
 - Only characterized row hammer effect on two data patterns, which is not comprehensive enough. And did not explain the mechanism of row hammer happening in the case of data pattern $P_{1/1}$ clearly.
 - $t_{dead}$  in  Section 4.2 is not necessary. The variable supposed to be controlled is the number of hammering, not experimental time.
 - Only experiments, no new ideas.
+
+## Paper presentation
+
+- Figures are unnecessarily big and a bit blurry.
 
 ## Thoughts
 - It seems that probability-triggering-refresh mechanism (PARA) is the most ideal mitigation, due to RowHammer’s inevitable micro mechanism shown in this paper. 

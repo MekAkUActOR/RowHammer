@@ -1,4 +1,4 @@
-# Haowen Liu  2020-10-30
+# Haowen Liu (2020-10-30)
 
 # Paper information
 
@@ -21,6 +21,7 @@ Retention time profiling is a way to mitigate overhead caused by unnecessary ref
 The paper explains DPD as the result of complex line coupling determined by mapping, remapping and circuit organization, and VRT as the result of the presence of a charge trap in the gate oxide, which is a memoryless random process.
 
 The paper advocates that DPD and VRT should be addressed in future retention time profiling research.
+
 
 ## Strengths
 

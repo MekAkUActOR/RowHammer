@@ -1,4 +1,4 @@
-# Haowen Liu  2020-11-22
+# Haowen Liu (2020-11-22)
 
 # Paper information
 
@@ -29,7 +29,11 @@ This paper conducted 3D TCAD **simulations** to explore the fundamental mechanis
 - Only explored ***trap-assisted*** row hammer effect, but did not explain why row hammer effect is trap-assisted clearly.
 - Results can only explain trap-assisted row hammer effect happened in a data pattern that the victim cell and the aggressor cell have different value.
 - Did not explain the non-monotonic behavior with temperature clearly.
+
+## Paper presentation
+
 - Blurry pictures.
+- The structure of the article is somewhat illogical.
 
 ## Thoughts
 - Design simulations to explain trap-assisted row hammer effect when the victim cell and the aggressor cell have the same value, by placing single trap at more positions. Actually there are four data-pairs to explore: 1/1, 0/0, 0/1, 1/0.

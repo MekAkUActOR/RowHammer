@@ -15,10 +15,9 @@ This paper tries to propose an end-to-end methodology to determine if cloud serv
 
 To overcome the first challenge, they first investigate CPU instruction sequences used in prior work to mount Rowhammer attacks and find none of them create near-optimal row activation rates ($167.4$ $ACTs/tREFI$) because of expensive memory barriers and the effects of out-of-order execution, and then they develop an instruction sequence that leverages **microarchitectural side-effects** (flushing a cache line in an invalid state using `clflushopt` instruction triggers accesses to that line in memory) to hammer DRAM at a near-optimal rate on modern Intel Skylake and Cascade Lake platforms.
 
-To address the second challenge, they first discuss the three different remappings from virtual addresses to DRAM cells, and then analyze shortcomings of map reverse engineering in prior work. They propose that Rowhammer attack with an extended refresh interval would address these problems, so they design a plug-in fault injector (hardware circuit) mounted between memory controller and DIMMs a cloud server that blocks `REF`s sent by memory controller by manipulating electrical signals and **changing DRR4 commands**, to manually lower the refresh rates, ensuring RowHammer bit flips to reverse engineer row adjacency in a DRAM. They find logical rows do not always map linearly, but instead can follow a *half-row* pattern (For example, row 0x11410 is adjacent to *half* of rows 0x1140F and 0x1141F, and a whole row 0x11411 in the paper).
+To address the second challenge, they first discuss the three different remappings from virtual addresses to DRAM cells, and then analyze shortcomings of map reverse engineering in prior work. They propose that Rowhammer attack with an extended refresh interval would address these problems, so they design a plug-in fault injector (hardware circuit) mounted between memory controller and DIMMs of a cloud server that blocks `REF`s sent by memory controller by manipulating electrical signals and **changing DRR4 commands**, to manually lower the refresh rates, ensuring RowHammer bit flips to reverse engineer row adjacency in a DRAM. They find logical rows do not always map linearly, but instead can follow a *half-row* pattern (For example, row 0x11410 is adjacent to *half* of rows 0x1140F and 0x1141F, and a whole row 0x11411 in the paper).
 
 Finally they use the worst-case instruction sequences and row adjacency to test six server-class DIMMs, but *find it **very difficult** to flip bits using their testing methodology*. So they analyze limitations (TRR, scaling limitations, vendor preferences) in their methodology and plan to address them in the future.
-
 
 ## Strengths
 
@@ -33,7 +32,7 @@ Finally they use the worst-case instruction sequences and row adjacency to test 
 ## Weaknesses
 
 - The paper is incomplete. They fail to complete the final step: testing RowHammer susceptibility of real server-class DIMMs. They fail to flip bits in server-class DIMMs because of limitations of their methodology.
-- This methodology needs to implement a fault injector circuit between memory controller and DIMMs when reverse engineering row adjacency, and takes a long time and causes too much overhead, which can’t be applyed to real running cloud servers and can't be performed at large scale.
+- This methodology needs to implement a fault injector circuit between memory controller and DIMMs when reverse engineering row adjacency, and takes a long time and causes too much overhead, which can’t be applyed to real running cloud servers and performed at large scale.
 
 - The fault injector drives A14 always low, and for ACT commands this bit encodes a row address, limiting the address space able to be reverse-engineered (those with a value of ’0’ for A14).
 - The methodology is limited to Intel-based architecture cloud server, but loses effectiveness when encountering other architectures like AMD or ARM for it leverages Intel-based microarchitectural side-effects.
@@ -47,7 +46,6 @@ Finally they use the worst-case instruction sequences and row adjacency to test 
 
 - How did they use single-sided RowHammer to reverse engineer row adjacency? Generally, one should access to two different rows in a bank in a loop to cause a hammer, or the row buffer will back the value rather than access to the row. But accessing two different rows in a bank leads to an attribution challenge – is the flipped bit adjacent to aggressor #1 or aggressor #2?
 - Why did they say the **microarchitectural side-effects** happens *only when* the cache line is invalid? Why not if a cache line is in another state?
-
 
 
 [^1]: Kim, Yoongu, et al. "Flipping bits in memory without accessing them: An experimental study of DRAM disturbance errors.” ISCA 2014.

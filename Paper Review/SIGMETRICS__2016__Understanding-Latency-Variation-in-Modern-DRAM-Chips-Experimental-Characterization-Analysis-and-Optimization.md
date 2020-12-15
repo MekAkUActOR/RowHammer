@@ -1,4 +1,4 @@
-# Haowen Liu  2020-10-22
+# Haowen Liu (2020-10-22)
 
 # Paper information
 
@@ -10,6 +10,7 @@
 # Paper content
 
 ## Summary
+
 This paper experimentally characterizes and understands the latency variation across cells within a DRAM chip for three fundamental DRAM operations (`activation`, `precharge`, `restoration`), and develops new mechanisms that exploit the latency variation to reliably improve performance.
 
 The experiments are carried across a total of 30 __DDR3__ DRAM modules comprising 240 DRAM chips from the three major DRAM vendors, on an FPGA-based DRAM testing in- frastructure. Here are some important conclusions.
@@ -25,10 +26,7 @@ It is promising to understand and exploit the inherent latency variation within 
 
 ## Strengths
 
-- Concise and easy to understand experimental pseudocode.
-- Push process forward by questions, making the main line clearer.
 - Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental parameter range, and then continue experiments only in this range, avoiding invalid experiments and making the experiment more efficient.
-- Show the chart selectively, making the conclusion more obvious and the paper more concise.
 
 ## Weaknesses
 
@@ -38,9 +36,16 @@ It is promising to understand and exploit the inherent latency variation within 
   - No latency margin, unreliable. After all, most of “waste latency” in contemporary DRAM are because of margin.
   - Looking up and applying latency for every request also induces latencies.
 - Flawed simulation, evading the crucial point. Didn’t discuss the overhead of looking up and applying latency for every request.
+
+## Paper presentation
+
+- Concise and easy to understand experimental pseudocode.
+- Push process forward by questions, making the main line clearer.
+- Show the chart selectively, making the conclusion more obvious and the paper more concise.
 - Tiger head, snake tail. It's very detailed at the beginning, but too brief from the middle to ending.
 
 ## Thoughts
+
 - There may be correlation between latency variation and DRAM generation. So we can carry out similar experiments on across different generations to characterize the correlation.
 - The latency variation in one chip may change with time, so experiments should also be carried out to characterize it.
 
@@ -49,8 +54,6 @@ It is promising to understand and exploit the inherent latency variation within 
 It’s not a new idea to characterize and exploit latency variation in DRAM, and the proposed mechanism is also not outstanding. The advantage of this paper is it has the resources and time to carry out the experiments.
 
 The most important knowledge I learn is the DRAM accessing mechanism: (i) Row Activation & Sense Amplification: opening a row to transfer its data to the row buffer, (ii) Read/Write: accessing the target column in the row buffer, and (iii) Precharge: closing the row and the row buffer.
-
-<img src="RowHammer.assets/1.png" alt="1" style="zoom:33%;" />
 
 Here I have some questions.
 

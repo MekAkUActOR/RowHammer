@@ -30,7 +30,7 @@ Finally, they evaluate the effectiveness of RAMSES and find RowHammer attacks wi
 
 - Less innovative. Basically it uses and improves other works’ methods.
 - Describe the reverse engineering step of RAMSES too briefly, by only citing a prior work. But this part is an important part of this paper.
-- RAMSES is **not universal**, for memory address mapping varies with DRAM vendors, configurations and even manufacturing variation. One flip table for a certain DRAM cannot be used by other DRAM.
+- RAMSES is **not universal**, for memory address mapping varies with DRAM vendors, configurations and even manufacturing variation. And one flip table for a certain DRAM cannot be used by other DRAM.
 - They said their support for DDR4 memory controllers as well as AMD CPUs was a work in progress, but I went to their GitHub repository and found its update has already stopped for over 2 years, and existing bugs also haven’t been addressed yet.
 - ***Writting error.*** In the second paragraph of Section 6, the root cause of RowHammer is not repeated toggling of the DRAM row buffer, but repeated toggling of a certain *wordline*.
 
