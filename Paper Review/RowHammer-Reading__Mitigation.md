@@ -19,8 +19,8 @@
 
 - [x] L. Cojocar et al., “Exploiting Correcting Codes: On the Effectiveness of ECC Memory Against RowHammer Attacks,” in SP, 2019.
 - [x] P. Frigo et al., “TRRespass: Exploiting the Many Sides of Target Row Refresh,” in SP, 2020.
-- [ ] D. Gruss et al., “Another Flip in the Wall of RowHammer Defenses,” in SP, 2018.
-- [ ] A. Kwong et al., “RAMBleed: Reading Bits in Memory Without Accessing Them,” in SP, 2020.
+- [ ] D. Gruss et al., "Another Flip in the Wall of RowHammer Defenses," in SP, 2018.
+- [ ] A. Kwong et al., "RAMBleed: Reading Bits in Memory Without Accessing Them," in SP, 2020.
 - [x] A. Tatar *et al.*, “Defeating Software Mitigations against Rowhammer: A Surgical Precision Hammer,” in *RAID*, 2018.
 - [x] L. Cojocar et al. "Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider,” in SP, 2020.
 
