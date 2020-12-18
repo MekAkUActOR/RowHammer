@@ -13,7 +13,7 @@
 
 This paper experimentally demonstrates how vulnerable modern DRAM chips are to RowHammer at the circuit-level, studies how this vulnerability will **scale going forward**, and evaluates five state-of-the-art RowHammer **mitigation mechanisms** using cycle-accurate simulation. Finally it provides promising directions for future research on RowHammer mitigation.
 
-To characterize RowHammer many detailed variable-controlling experiments were carried out on a broad range of real modern DRAM chips across different DRAM types, technology node generations, and manufacturers. Here are some important academic conclusions.
+To characterize RowHammer many detailed variable-controlling experiments were carried out on a broad range of real modern DRAM chips across different DRAM types, technology node generations, and manufacturers. Here are some important conclusions.
 
 - Newer DRAM chips appear to be more vulnerable to RowHammer, and the first RowHammer bit flips appear earlier.
 - The log of the number of RowHammer bit flips has a linear relationship with the log of HC (Hammer count).
