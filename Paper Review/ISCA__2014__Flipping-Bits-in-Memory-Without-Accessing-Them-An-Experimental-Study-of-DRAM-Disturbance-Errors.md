@@ -21,12 +21,12 @@ This paper carried out detailed experiments to explore the **properties** of dis
 - Disturbance Errors are widespread across DRAM types and vendors.
 - **Access Pattern Dependence**: the shorter RI (refresh interval), the fewer errors; the longer AI (activation interval), the fewer errors; the fewer activations (RI/AI), the fewer errors.
 - **Address Correlation**: an aggressor and its victims are likely to have consecutive row-addresses.
-- **Data Pattern Dependence**: except for rare exceptions, every other victim cell had an error in **just a single preferred direction** (**leakage**).
+- **Data Pattern Dependence**: despite rare exceptions, every other victim cell (cells adjacent to the hammering row) had an error in **just a single preferred direction** (leakage direction). For example, one cell can only be flipped from $1$ to $0$ but cannot reverse.
 - Sensitivity Results: errors are mostly **repeatable**; victim cells $\ne$ weak cells; not strongly affected by temperature (but affected).
 
-This paper also proposed some mitigations against disturbance error and discuss their feasibility. The most recommended one is ***PARA*** (probability-triggering-refresh mechanism).
+This paper also proposed some mitigations against disturbance error and discuss their feasibility. The most recommended one is ***PARA*** (probability-triggering-refresh mechanism). *Every time a row is opened and closed, one of its adjacent rows is also opened (i.e., refreshed) with some low probability.*
 
-A user-level program can cause disturbance errors on pages belonging to other programs by simply generating many DRAM accesses. Because the DRAM process technology is still scaling down to smaller dimensions, this phenomenon is becoming so widespread that it’ve cast tremendous thread on security of lots of hardwares and softwares.
+A user-level program can cause disturbance errors on pages belonging to other programs by simply generating many DRAM accesses. Because the DRAM process technology is still scaling down to smaller dimensions, this phenomenon is becoming so widespread that it have cast tremendous thread on security of lots of hardwares and softwares.
 
 ## Strengths
 
@@ -43,8 +43,7 @@ Explored ***properties*** of disturbance errors in all aspects, in a very short 
 
 ## Thoughts
 
-- Design and carry out experiments in variable-controlling approach to explore the correlation between DRAM age and disturbance-error-vulnerability. The aging of DRAM cells may change the physical property of capacitor, influencing the charging and leaking process. And this property may be exploited by malicious attckers. So we can also do some researches on system program behavior (frequent access to a physical address results in accelerated aging, and more vulnerable to RowHammer).
-- Explore the physical cause of disturbance error, build a physical model to describe it and work out the mitigation methodology from circuit level based on the conclusion.
+- The aging of DRAM cells may change the physical property of capacitor and transistor, influence the charging and leaking process, and finally affect the vulnerability of cells to disturbance errors. And this property may be exploited by malicious attackers..
 - To exploit RowHammer, a thorough understanding of operating system and program behavior is necessary.
 
 ## Takeaways and questions
@@ -55,12 +54,16 @@ Here I have some questions.
 
 - If a DRAM row/bit is more usually used (times of access, charging state time, etc), is it more vulnerable to RowHammer? Or the less used ones are more vulnerable? Are there researches on the correlation between DRAM age and RowHammer-vulnerability?
 - What results in victim cell faults in 2 directions?
-- The probability-triggering mechanism of ***PARA*** might be inspired by ***CSMA/CD***, or actually it’s a common method in security research?
+- Is the probability-triggering mechanism of ***PARA*** a common method in security research?
 - How to exploit disturbance error in reality attack? Though the phenomenon seems very dangerous, maybe it's hard to exploit, because of the complex mechanisms of memory allocation.
-- Can disturbance error be used in a less aggressive way, not as a method of attack, but as a technique in a security mechanism or other field?
+- Can disturbance error be used in a less aggressive way, not as a method of attack, but as a technique in a security scenario like *Physical Unclonable Function*, or other field?
 
 ## Q&As
 
 **Q1:** Is "Disturbance Error" a proper noun?
 
 **A1:** Yes, “disturbance error" is a proper noun in this paper, and the word "RowHammer” was proposed and defined by later work.
+
+**Q2:** In third para of summary, does RI have anything to do with "Access Pattern"?
+
+**A2:** Refresh interval affects the number of possible activations, thus affects access pattern if the activation interval is fixed.
