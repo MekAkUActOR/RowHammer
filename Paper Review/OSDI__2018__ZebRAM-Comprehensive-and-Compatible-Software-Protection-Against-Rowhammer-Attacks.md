@@ -1,11 +1,11 @@
-# Haowen Liu (2020-12-15)
+# Haowen Liu (2020-12-17)
 
 # Paper information
 
 - Title: ZebRAM: Comprehensive and Compatible Software Protection Against Rowhammer Attacks
 - Authors: Radhesh Krishnan Konoth, Marco Oliverio, Andrei Tatar, Dennis Andriesse, Herbert Bos, Cristiano Giuffrida and Kaveh Razavi
 - Venue: OSDI 2018
-- Keywords: 
+- Keywords: software-level RowHammer protection, guard rows, swap space
 
 # Paper content
 

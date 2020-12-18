@@ -11,18 +11,18 @@
 
 ## Summary
 
-This paper was the first to expose the phenomenon of ***Disturbance Errors***, a kind of unexpected *bit-flips*, in modern commodity DRAM and other memory/storage tochnologies. This phenomenon has become more and more obvious with the DRAM process technology scaling down to smaller dimensions. Malicious attackers can exploit it to break the ***memory isolation*** ***security principle*** to cast great threat on computer system.
+This paper was the first to expose the phenomenon of ***Disturbance Errors***, a kind of *bit-flips*, in modern commodity DRAM and other memory/storage technologies. This phenomenon has become more and more obvious with the DRAM process technology scaling down to smaller dimensions. Malicious attackers can exploit it to break the ***memory isolation*** ***security principle*** to cast great threat on computer system.
 
-Disturbance Error is mainly caused by voltage fluctuations on an wordline, which injects noise into an adjacent wordline through **electromagnetic coupling**, **bridges**, and/or **hot-carrier injection**. *Repeated toggling of a DRAM row’s wordline* stresses inter-cell coupling effects that accelerate charge leakage from nearby rows. Such a cell **loses too much charge** before *refresh*, it experiences a disturbance error.
+Disturbance Error is mainly caused by voltage fluctuations on a wordline, which injects noise into an adjacent wordline through **electromagnetic coupling**, **bridges**, and/or **hot-carrier injection**. *Repeated toggling of a DRAM row’s wordline* stresses inter-cell coupling effects that accelerate charge leakage from nearby rows. When such a cell **loses too much charge** in a *refresh* interval, it experiences a disturbance error.
 
 This paper carried out detailed experiments to explore the **properties** of disturbance errors in all aspects. Here are some important results.
 
 - DRAM disturbance errors are caused by **the repeated opening/closing of a row**, *not* by column reads or writes.
-- Disturbance Errors are widespread.
+- Disturbance Errors are widespread across DRAM types and vendors.
 - **Access Pattern Dependence**: the shorter RI (refresh interval), the fewer errors; the longer AI (activation interval), the fewer errors; the fewer activations (RI/AI), the fewer errors.
 - **Address Correlation**: an aggressor and its victims are likely to have consecutive row-addresses.
-- **Data Pattern Dependence**: Except for rare exceptions, every other victim cell had an error in **just a single preferred direction** (**leakage**).
-- Sensitivity Results: Errors are Mostly **Repeatable**; Victim Cells $\ne$ Weak Cells; Not Strongly Affected by Temperature (but affected).
+- **Data Pattern Dependence**: except for rare exceptions, every other victim cell had an error in **just a single preferred direction** (**leakage**).
+- Sensitivity Results: errors are mostly **repeatable**; victim cells $\ne$ weak cells; not strongly affected by temperature (but affected).
 
 This paper also proposed some mitigations against disturbance error and discuss their feasibility. The most recommended one is ***PARA*** (probability-triggering-refresh mechanism).
 
@@ -57,4 +57,10 @@ Here I have some questions.
 - What results in victim cell faults in 2 directions?
 - The probability-triggering mechanism of ***PARA*** might be inspired by ***CSMA/CD***, or actually it’s a common method in security research?
 - How to exploit disturbance error in reality attack? Though the phenomenon seems very dangerous, maybe it's hard to exploit, because of the complex mechanisms of memory allocation.
-- Can disturbance error be used in a less agressive way, not as a method of attack, but as a technique in a security mechanism or other field?
+- Can disturbance error be used in a less aggressive way, not as a method of attack, but as a technique in a security mechanism or other field?
+
+## Q&As
+
+**Q1:** Is "Disturbance Error" a proper noun?
+
+**A1:** Yes, “disturbance error" is a proper noun in this paper, and the word "RowHammer” was proposed and defined by later work.
