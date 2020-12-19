@@ -38,7 +38,7 @@ In the end, they discuss the possible mitigations against FFS at the hardware (E
 ## Paper presentation
 
 - Write in a layer-wise method, from summary to detail, exactly appropriate for this paper.
-- ***Writting error***. In the 5th paragraph of Section 3, the *Carmichael function* should be $\lambda(n)=lcm(p_1-1,p_2-1)$, not $lcm(p_1,p_2)$.
+- ***Writing error***. In the 5th paragraph of Section 3, the *Carmichael function* should be $\lambda(n)=lcm(p_1-1,p_2-1)$, not $lcm(p_1,p_2)$.
 - ***Typos***. In the 7th paragraph of Section 3, the first two fomula should be $n’=\Pi_{j=1}^{s’}{p’}^{\widetilde{\gamma}_i}_i$ and $c’=m^e$ $mod$ $n’$.
 - Some charts are a bit difficult to understand.
 
