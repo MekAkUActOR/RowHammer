@@ -41,7 +41,7 @@ Finally their evaluation of ZebRAM defending against RowHammer shows a good effe
 
 ## Thoughts
 - To address the 3rd and 4th weakness above, the ZebRAM mechanism can be implemented directly on DRAM, by modifying the pins of chips and bootloader of the operating system. But in this way we will lose the most important advantage of ZebRAM: providing protection for billions of devices already in operation.
-- The size of swap cache should be calculated formally, or may be unnecessarily large and induce more overhead to system.
+- The size of swap cache should be calculated formally or empirically, or may be unnecessarily large and induce more overhead to system, for the swap cache takes up space of safe region.
 
 ## Takeaways and questions
 
