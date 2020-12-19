@@ -3,7 +3,7 @@
 # Paper information
 
 - Title: Trap-Assisted DRAM Row Hammer Effect
-- Authors: Thomas Yang and Xi-Wei Lin
+- Authors: Thomas Yang, Xi-Wei Lin
 - Venue: EDL 2019
 - Keywords: RowHammer Effect, TCAD simulations, charge capture and emission, carrier mitigation
 
@@ -11,11 +11,11 @@
 
 ## Summary
 
-This paper conducted 3D TCAD **simulations** to explore the fundamental mechanism of RowHammer effect in DRAM at the level of semiconductor and circuit. They constructed a 3D DRAM structure consisting of two cells with saddle-fin, buried metal word-line, sharing the same active area and a common bit-line, with dimensions close to a typical 2y nm node. The paper placed single trap at different positions in their TCAD model to find the different RowHammer effects at different positions, through which the paper explained the mechanism of trap-assisted RowHammer effect. Conclusions are as follows:
+This paper conducted 3D TCAD (Technology Computer-Aided Design) **simulations** to explore the fundamental mechanism of RowHammer effect in DRAM at the level of semiconductor and circuit. They constructed a 3D DRAM structure consisting of two cells with saddle-fin, buried metal word-line, sharing the same active area and a common bit-line, with dimensions close to a typical 2y nm node (means nodes using 20~29 nm technology). The paper placed single trap at different positions in their TCAD model to find the different RowHammer effects at different positions, through which the paper explained the mechanism of trap-assisted RowHammer effect. Conclusions are as follows:
 
 - The mechanism of trap-assisted row hammer effect consists of two processes: a) trap charge capture and emission and b) subsequent carrier migration towards victim node to discharge its capacitance.
 - A deeper bit-line junction mitigates row hammer effect, since it intercepts more electron carriers during migration.
-- Trap-assisted row hammer effect reaches maximum around room temperature and decreases at either lower or elevated temperature.
+- Trap-assisted row hammer effect reaches maximum around room temperature (300°K) and decreases at either lower or elevated temperature.
 - Feature size scaling aggravates the row hammer effect.
 
 
