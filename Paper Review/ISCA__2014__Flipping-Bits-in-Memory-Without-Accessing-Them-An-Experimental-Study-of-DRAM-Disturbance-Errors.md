@@ -21,7 +21,7 @@ This paper carried out detailed experiments to explore the **properties** of dis
 - Disturbance Errors are widespread across DRAM types and vendors.
 - **Access Pattern Dependence**: the shorter RI (refresh interval), the fewer errors; the longer AI (activation interval), the fewer errors; the fewer activations (RI/AI), the fewer errors.
 - **Address Correlation**: an aggressor and its victims are likely to have consecutive row-addresses.
-- **Data Pattern Dependence**: despite rare exceptions, every other victim cell (cells adjacent to the hammering row) had an error in **just a single preferred direction** (leakage direction). For example, one cell can only be flipped from $1$ to $0$ but cannot reverse.
+- **Data Pattern Dependence**: despite rare exceptions, every other victim cell (cell experiencing bit flip) had an error in **just a single preferred direction** (leakage direction). For example, one cell can only be flipped from $1$ to $0$ but cannot reverse.
 - Sensitivity Results: errors are mostly **repeatable**; victim cells $\ne$ weak cells; not strongly affected by temperature (but affected).
 
 This paper also proposed some mitigations against disturbance error and discuss their feasibility. The most recommended one is ***PARA*** (probability-triggering-refresh mechanism). *Every time a row is opened and closed, one of its adjacent rows is also opened (i.e., refreshed) with some low probability.*
@@ -62,7 +62,7 @@ Here I have some questions.
 
 **Q1:** Is "Disturbance Error" a proper noun?
 
-**A1:** Yes, “disturbance error" is a proper noun in this paper, and the word "RowHammer” was proposed and defined by later work.
+**A1:** Yes, “disturbance error" is a proper noun in this paper, and the word "RowHammer” was proposed and defined by later works.
 
 **Q2:** In third para of summary, does RI have anything to do with "Access Pattern"?
 
