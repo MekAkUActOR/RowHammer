@@ -15,7 +15,7 @@ To characterize the failure mechanism of RowHammer at the semiconductor level, t
 
 Conclusions are as follows:
 
-- Row hammer causes bit-flips by accelerating discharging. Hammer effect increases with increasing $t_{RP}$. 
+- Row hammer causes bit-flips by accelerating discharging. Hammer effect increases with increasing $t_{RP}$ (precharge latency parameter). 
 - RowHammer fault is primarily caused by the charge recombination (electrons and charges combine to electrical neutrality) of the victim cell with the charges in the channel of the neighborhood cell.
 - Leakage of the victim cell decreases with the increasing of **doping concentration**, geometrical distance between the aggressor and the victim cells. Data pattern $P_{0/1}$ is much vulnerable than $P_{1/1}$ ($P_{a/b}$ means the left cell stores value $a$ and the right cell stores the value $b$). 
 
