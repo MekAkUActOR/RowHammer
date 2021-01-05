@@ -50,7 +50,7 @@
 - [ ] H. Gomez et al., “DRAM Row-Hammer Attack Reduction using Dummy Cells,” in NORCAS, 2016.
 - [ ] H. Hassan et al., “CROW: A Low-Cost Substrate for Improving DRAM Performance, Energy Efficiency, and Reliability,” in ISCA, 2019.
 - [ ] M. Kim et al., “An Effective DRAM Address Remapping for Mitigating Rowhammer Errors,” TC, 2019.
-- [x] Park, Yeonhong, et al. "Graphene: Strong yet Lightweight Row Hammer Protection." *2020 53rd Annual IEEE/ACM International Symposium on Microarchitecture (MICRO)*. IEEE, 2020.
+- [x] Park, Yeonhong, et al., "Graphene: Strong yet Lightweight Row Hammer Protection." *2020 53rd Annual IEEE/ACM International Symposium on Microarchitecture (MICRO)*. IEEE, 2020.
 
 ### DRAM-System Cooperation
 
