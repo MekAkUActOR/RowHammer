@@ -51,7 +51,7 @@ C --yes--> E(Insert new item ID<br> in that entry)
 E --> G
 ```
 
-To prove the **no false negative** of Graphene, which is equivalent to the theorem that *The actual count of any row cannot increase by* $T$ *without triggering a victim row refresh.* This theorem is trivial to prove after proving two lemmas: 1) The estimated count of every entry in the counter table is always equal to or greater than the actual count of the corresponding DRAM row; 2) Spillover count cannot exceed $\frac{W}{N_{entry}+1}$. The former can be proved by a strong induction and the latter is obviously correct.
+The **no false negative** of Graphene is equivalent to the theorem that *The actual count of any row cannot increase by* $T$ *without triggering a victim row refresh.* This theorem is trivial to prove after proving two lemmas: 1) The estimated count of every entry in the counter table is always equal to or greater than the actual count of the corresponding DRAM row; 2) Spillover count cannot exceed $\frac{W}{N_{entry}+1}$. The former can be proved by a strong induction and the latter is obviously correct.
 
 - How do they calculate the energy cost of their implementation in simulation?
 - The Misra-Gries algorithm in this paper has a few differences from what I learned before. Are there many variants of Misra-Gries algorithm?
