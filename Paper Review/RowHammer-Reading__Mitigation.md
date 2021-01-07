@@ -29,6 +29,8 @@
 - [x] K. Razavi et al., “Flip Feng Shui: Hammering a Needle in the Software Stack,” in USENIX Security, 2016.
 - [ ] V. Van Der Veen et al., “Drammer: Deterministic Rowhammer Attacks on Mobile Platforms,” in CCS, 2016.
 - [ ] M. Lipp et al., “Nethammer: Inducing RowHammer Faults Through Network Requests,” in EuroS&PW, 2018.
+- [x] Frigo, Pietro, et al. "Grand pwning unit: Accelerating microarchitectural attacks with the GPU.” in SP 2018.
+- [x] Tatar, Andrei, et al. "Throwhammer: Rowhammer attacks over the network and defenses." in USENIX ATC 2018.
 
 # Mitigations
 
