@@ -42,7 +42,7 @@ Finally they use the worst-case instruction sequences and row adjacency to test 
 - ***Writing Error.*** In the first paragraph of Section III-C, they mistake *mapping* as *remapping*.
 
 ## Thoughts
-- The first challenge should be changed to *devising a sequence of CPU instructions that leads to a maximal rate of **effective** row activations in DRAM*. TRR invalidates most of activations, so an worst-case CPU instruction sequence should bypass TRR. To this end, one can substitute all accesses in access patterns found by *TRRespass* with `clflushopt` to achieve a near-optimal rate as well as bypassing TRR.
+- The first challenge should be changed to *devising a sequence of CPU instructions that leads to a maximal rate of **effective** row activations in DRAM*. TRR invalidates most of activations, so a worst-case CPU instruction sequence should bypass TRR. To this end, one can substitute all accesses in access patterns found by *TRRespass* with `clflushopt` to achieve a near-optimal rate as well as bypassing TRR.
 - Reverse engineering internal row adjacency in DRAM has nothing to do with CPU, so one can just use *SoftMC* (an FPGA-based memory controller which provides fine-grained control over the commands sent to DRAM) platform to send crafted DRAM commands with a customized refresh interval rather than use faulted fault injector.
 
 ## Takeaways and questions
