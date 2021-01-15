@@ -4,7 +4,7 @@
 
 - Title: Are We Susceptible to Rowhammer? An End-to-End Methodology for Cloud Provider
 - Authors: Lucian Cojocar, Jeremie Kim, Minesh Patel, Lillian Tsai, Stefan Saroiu, Alec Wolman, Onur Mutlu
-- Venue: S&P 2020
+- Venue: IEEE S&P 2020
 - Keywords: RowHammer susceptibility testing, Intel-based architecture cloud server, `clflushopt`, row adjacency reverse engineering
 
 # Paper content
