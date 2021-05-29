@@ -79,18 +79,6 @@ D(Dual counting Bloom filter)-->E(Blocking blackisted rows)
 D-->F(Throttle unsafe threads)
 ```
 
-Since both *Misra-Gries algorithm* and *dual counting Bloom filter* have the same function of detecting aggressor rows and maintaining blacklist (counting-based detection), they can replace each other. The *Misra-Gries algorithm* part of *Graphene* can be replaced by *dual counting Bloom filter*, which will not affect the effectiveness of *Graphene*. And we can also replace the *Nearby Row Refresh* of *Graphene* with *blocking blacklisted rows*, which will convert the *Graphene* into a blocking-based prevention mechanism. In a word, counting-based detection can be implemented with many different data structures and algorithms, but it is just the preparation work. What matters most is the subsequent operation on the elements in the blacklist, namely, blocking, refreshing, or throttling.
-
-For example, if I use *Misra-Gries algorithm* as *BlockHammer*’s counting-based detection mechanism, I can obtain the Advanced-*BlockHammer* (more space-efficient):
-
-```mermaid
-graph TB
-A(Counting-based detection)-->B(Blocking-based prevention)
-A-->C(Throttling-based mitigation)
-D(Misra-Gries algorithm)-->E(Blocking blackisted rows)
-D-->F(Throttle unsafe threads)
-```
-
 ## Takeaways and questions
 
 This paper classifies RowHammer mitigation mechanisms into four high-level approaches: increased refresh rate, physical isolation, reactive refresh, and proactive throttling, and proposes four desired characteristics: comprehensive protection, compatibility with commodity DRAM chips, scaling with RowHammer vulnerability, and deterministic protection, which can be a good reference and standard for our subsequent research.

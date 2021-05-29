@@ -43,7 +43,7 @@ Finally, they deploy Graphene inside a memory controller by two CAM arrays and a
 
 ```mermaid
 graph LR
-A[Item ID] --> B{Already<br> in the table?}
+A[Item ID] --> B{"Already<br> in the table? <br>  (hit)"}
 B --no--> C{Any entry with the<br> same value as the<br> spillover count?}
 C --no--> D(Increment the<br> spillover count)
 B --yes--> G(Increment the<br> estimated count<br> by one)
