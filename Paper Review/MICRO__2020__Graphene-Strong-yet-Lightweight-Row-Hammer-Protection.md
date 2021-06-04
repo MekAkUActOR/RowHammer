@@ -1,16 +1,13 @@
 # Haowen Liu (2021-01-04)
 
 # Paper information
-
 - Title: Graphene: Strong yet Lightweight Row Hammer Protection
 - Authors: Yeonhong Park, Woosuk Kwon, Eojin Lee, Tae Jun Ham, Jung Ho Ahn, Jae W. Lee
 - Venue: MICRO 2020
 - Keywords: counter-based RowHammer prevention, Misra-Gries algorithm, memory controller, non-adjacent RowHammer
 
 # Paper content
-
 ## Summary
-
 This paper proposes a low-cost counter-based RowHammer prevention called Graphene (strong yet lightweight as Graphene, an atomic-scale hexagonal lattice made of carbon atoms) on the basis of Misra-Gries algorithm, a classic, space-efficient solution to identify frequent elements from an incoming data stream (Frequent Elements Problem). Graphene is deployed inside a memory controller, using CAM-based tables, with **low area** and performance/energy overhead even for the most adversarial pattern. Due to the basis of Misra-Gries algorithm, Graphene provides protection guarantees with **no false negative** and small false positives, while requiring only a minor extension to the DRAM protocol.
 
 First, this paper divides existing RowHammer solutions into two major categories: probabilistic and counter-based schemes, and analyzes the strengths and weaknesses of them. For probabilistic solutions, they have an advantage in hardware cost for their simplicity, but they do not provide guaranteed protection and hence are prone to false negatives. For counter-based schemes, they usually can provide guaranteed protection with no false negatives, but they are often vulnerable to specific access patterns due to their defective mechanisms, and what’s more, they have a significant cost in terms of either energy and performance (CBT) or area (TWiCe) for tracking ACT counts.
@@ -19,9 +16,7 @@ To provide guaranteed protection while addressing those weaknesses in existing s
 
 Finally, they deploy Graphene inside a memory controller by two CAM arrays and add a new command `Nearby Row Refresh (NRR)` to the DRAM protocol. They evaluate the overhead of Graphene in terms of area, energy, and performance, in comparison to other counter-based schemes and PARA, using both multi-programmed and multi-threaded workloads extracted from each of the 29 SPEC CPU2006 benchmarks, and show that Graphene has the same level of low energy/performance overhead as TWiCE, much lower than PARA and CBT, while having the same level of low area cost as CBT, much lower than TWiCE. And they also evaluate the scalability of Graphene for future DRAM devices having a much lower RowHammer threshold (the number of activations needed to trigger a bit flip) and show that Graphene provides the completely guaranteed protection at the expense of an extra table size, whose actual area cost may not increase much as the technology scales.
 
-
 ## Strengths
-
 - Graphene provides completely guaranteed protection against RowHammer with **no false negative** and the protection guarantee is proved theoretically.
 - Graphene shows very small area overhead compared to existing solutions, due to the nature of Misra-Gries algorithm.
 - Graphene shows no performance overhead and negligible energy overhead when handling normal workloads.
@@ -29,7 +24,6 @@ Finally, they deploy Graphene inside a memory controller by two CAM arrays and a
 - Good scalability. Graphene provides the completely guaranteed protection at the expense of an extra table size, whose actual area cost may not increase much as the technology scales. And the adjustable reset window allows users to make trade-off between area cost and performance overhead.
 
 ## Weaknesses
-
 - Graphene still has substantial **redundancies** as a counter-based RowHammer mitigation mechanism. First, in adjacent scenario, to take both single-row RowHammer and double-row RowHammer into account, Graphene have to reduce the estimated count threshold $T$ by half, which increases the probability of false positives and doubles the number of entries $N_{entry}$ (the number of counters). It is necessary and sufficient if rows in double-row RowHammer are completely independent with each other. Nevertheless, the rows in double-row RowHammer have strong address correlation, so reducing $T$ by half is definitely an overkill. The same problem happens in the non-adjacent scenario.
 - On the one hand, the evaluations did not consider the situation when the RowHammer Threshold is very small (less than $1K$). On the other hand, they could not just omit the evaluation of Graphene for normal workloads, after all the false positive of Graphene is not 0, and will be substantial when the RowHammer Threshold is very small.
 
@@ -38,7 +32,6 @@ Finally, they deploy Graphene inside a memory controller by two CAM arrays and a
 - To improve Graphene, one can start with the **redundancies** when configuring $T$ and $N_{entry}$. Graphene simply reduces $T$ by half and doubles $N_{entry}$ to take both single-row RowHammer and double-row RowHammer into account. However, this is low-efficiency because rows in double-row RowHammer have address correlation, using which one can handle both single-row RowHammer and double-row RowHammer without using that big margins as Graphene. Same things happen in non-adjacent scenario.
 
 ## Takeaways and questions
-
 ***Misra-Gries Algorithm:*** A classic, space-efficient solution to identify frequent elements from an incoming data stream. The Misra-Gries algorithm maintains a finite-sized associative array data structure which has an item ID as the key and the *estimated count* as the corresponding value. We refer to this structure as *counter table*. Note that we differentiate the *estimated count* in each entry of the counter table from the *actual count* of the corresponding item ID. In addition to the counter table, it also maintains a value named spillover count, which is initialized with zero. The flow of Misra-Gries algorithm is shown in the figure below. When an *estimated count* for an entry whose key is row X reaches specific threshold $T$ or a multiple of $T$ (e.g., $2T$, $3T$, ...), we identify row X as a potentially fatal aggressor row that can trigger RowHammer attacks.
 
 ```mermaid
