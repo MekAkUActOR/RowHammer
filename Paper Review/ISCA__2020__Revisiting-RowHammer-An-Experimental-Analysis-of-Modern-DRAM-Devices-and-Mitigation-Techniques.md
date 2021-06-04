@@ -22,8 +22,8 @@ The paper uses cycle-accurate simulation to evaluate the five state-of-the-art R
 Modern DRAM chips are more vulnerable to RowHammer. However, existing RowHammer mitigation mechanisms suffer from large performance overheads at projected future hammer counts (not scalable) and are still far from ideal. A scalable and low-overhead solution to RowHammer is needed. The paper provides two promising directions --- *DRAM-System Cooperation* and *Profile-Guided Mechanisms* --- for future RowHammer mitigation research.
 
 ## Strengths
-- Detailed describe experimental platform, infrastructure, condition and parameters, making it easier for researchers to reproduce experiments.
-- Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental conditions and parameters (e.g., worst-case condition), and then continue experiments only in these selective conditions, avoiding invalid experiments and making the experiment more efficient.
+- Describe experimental platform, infrastructure, condition and parameters in detail, making it easier for researchers to reproduce experiments.
+- Targeted and selective experiments. The paper first carries out some preliminary experiments to find the suitable and efficient experimental conditions and parameters (e.g., worst-case condition), and then continue experiments only in these selective conditions, avoiding invalid experiments and making the experiments more efficient.
 - Provide two promising directions for future RowHammer mitigation research, which is the most valuable part of this paper.
 
 ## Weaknesses
