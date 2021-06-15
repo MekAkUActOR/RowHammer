@@ -41,7 +41,6 @@ Finally, the paper proposes four desired characteristics of a RowHammer mitigati
 - Both *Graphene* and *BlockHammer* indicate a new direction to detect RowHammer attacks with zero false negatives: use a space-efficient (accuracy-for-space/time) counting algorithm to detect RowHammer attacks with **no false negative** and small false positives.
 
 The common framework of RowHammer mitigation:
-
 ```mermaid
 graph TB
 Z(RowHammer Mitigation)---Y(Deterministic protection)
@@ -49,29 +48,15 @@ Z---X(Probabilistic protection)
 X-->V(Refresh-based mitigation)
 Z---W(Increased refresh rate)
 Y---E(Physical isolation)
-Y-->A(Counting-based detection)
+Y---A(Counting-based detection)
 A-->B(Blocking-based prevention)
 A-->C(Refresh-based mitigation)
 A-->D(Throttling-based mitigation)
 ```
 
-Give *Graphene* as an example:
+Take *Graphene* as an example. The Misra-Gries algorithm is a counting-based detection method, and Nearby Row Refresh is a refresh-based mitigation method.
 
-```mermaid
-graph TB
-A(Counting-based detection)-->B(Refresh-based mitigation)
-C(Misra-Gries algorithm)-->D(Nearby Row Refresh)
-```
-
-Give *BlockHammer* as another example:
-
-```mermaid
-graph TB
-A(Counting-based detection)-->B(Blocking-based prevention)
-A-->C(Throttling-based mitigation)
-D(Dual counting Bloom filter)-->E(Blocking blackisted rows)
-D-->F(Throttle unsafe threads)
-```
+Take *BlockHammer* as another example. The dual counting Bloom filter is a counting-based detection method, and blocking blacklisted rows is a blocking-based prevention method, while throttling unsafe threads is a throttling-based mitigation method. So *BlockHammer* is actually the combination of blocking and throttling.
 
 ## Takeaways and questions
 This paper classifies RowHammer mitigation mechanisms into four high-level approaches: increased refresh rate, physical isolation, reactive refresh, and proactive throttling, and proposes four desired characteristics: comprehensive protection, compatibility with commodity DRAM chips, scaling with RowHammer vulnerability, and deterministic protection, which can be a good reference and standard for our subsequent research.
