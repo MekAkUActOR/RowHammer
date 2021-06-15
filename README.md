@@ -1,2 +1,2 @@
 # RowHammer
-Research on RowHammer -- CARAS
+Research on RowHammer
